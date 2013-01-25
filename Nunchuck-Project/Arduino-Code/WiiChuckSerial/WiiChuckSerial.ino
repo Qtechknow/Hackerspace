@@ -1,10 +1,13 @@
 /*
- * WiichuckSerial
- *
- * Uses Nunchuck Library discussed in Recipe 16.5
- * sends comma-separated values for data
- * Label string separated by commas can be used by receiving program 
- * to identify fields
+   WiichuckSerial
+ 
+   Uses Nunchuck Library to send nunchuck data to Processing
+   
+   originally created by Michael Margolis
+   nunchuck adapter created by Tod E. Kurt
+   
+   code modified by Quin (Qtechknow)
+   made on 22 Jan 13
  */
 
 
@@ -14,8 +17,6 @@
 // values to add to the sensor to get zero reading when centered
 int offsetX, offsetY, offsetZ; 
 
-#include <Wire.h>
-#include "Nunchuck.h"
 void setup()
 {
     Serial.begin(57600);
@@ -28,7 +29,6 @@ void loop()
 {
   nunchuckRead();
   delay(6);
-  nunchuckGetValue();
   boolean btnC = nunchuckGetValue(wii_btnC);
   boolean btnZ = nunchuckGetValue(wii_btnZ);
   
