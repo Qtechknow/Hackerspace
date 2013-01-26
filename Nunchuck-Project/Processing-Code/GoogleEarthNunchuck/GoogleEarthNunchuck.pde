@@ -25,7 +25,7 @@ void setup() {
   PFont fontA = createFont("Arial.normal", 12);  
   textFont(fontA);
 
-  short portIndex = 6;  // select the com port, 0 is the first port
+  short portIndex = 1;  // select the com port, 0 is the first port
   String portName = Serial.list()[portIndex];
   println(Serial.list());
   println(" Connecting to -> " + portName) ;
